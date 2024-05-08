@@ -1,0 +1,259 @@
+.ex-1-square {
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+    transition: all 2s ease-in-out;
+    cursor: pointer;
+}
+.ex-2-square {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: all 3s ease-out;
+}
+.ex-3-square {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: all 2s ease;
+}
+.ex-4-square {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: all 2s ease;
+}
+.ex-5-square {
+    margin: 20px;
+    width: 60px;
+    height: 60px;
+    background: red;
+    transition: all 1.5s ease-in-out;
+}
+.ex-6-img, .ex-7-img, .ex-8-img {
+    width: 500px;
+}
+
+.ex-9-img {
+    margin: 50px 100px;
+    width: 400px;
+}
+.ex-10-icon {
+    font-size: 60px;
+    animation: 1.5s linear infinite spin;
+}
+
+.ex-11-icon {
+    font-size: 60px;
+}
+.ex-12-button, .ex-13-button {
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 70px;
+    text-transform: uppercase;
+    border: 3px solid #1b3c59;
+    color: #1b3c59;
+    font-size: 20px;
+    line-height: 70px;
+    text-align: center;
+    text-decoration: none;
+}
+.ex-12-top-white, .ex-13-top-white {
+    position: absolute;
+    top: -10px;
+    left: 10%;
+    background: #f5f5f5;
+    width: 60px;
+    height: 20px;
+}
+.ex-12-bottom-white, .ex-13-bottom-white {
+    position: absolute;
+    bottom: -10px;
+    right: 20%;
+    background: #f5f5f5;
+    width: 60px;
+    height: 20px;
+}
+
+
+/* Risoluzione Esercizi */
+/* ESERCIZIO 1 */
+
+.ex-1-square:hover {
+    background-color: red;
+}
+
+/* ESERCIZIO 2 */
+
+.ex-2-square:active {
+    width: 100%;
+}
+
+/* ESERCIZIO 3 */
+
+.ex-3-square:hover {
+    border-radius: 100%;
+}
+
+/* ESERCIZIO 4 */
+
+.ex-4-square:hover {
+    opacity: 0;
+}
+
+/* ESERCIZIO 5 */
+
+.ex-5-square:hover {
+    margin: 0px;
+    width: 100px;
+    height: 100px;
+}
+
+.ex-5-square:active {
+    margin: 35px;
+    width: 30px;
+    height: 30px;
+}
+
+/* ESERCIZIO 6 */
+
+.ex-6-img:hover {
+    filter: grayscale(100%);
+}
+
+/* ESERCIZIO 7 */
+
+.ex-7-img:hover {
+    filter: grayscale(100%);
+    width: 250px;
+    transition: all 2s;
+}
+
+/* ESERCIZIO 8 */
+
+.ex-8-img:hover {
+    filter: brightness(70%) grayscale(60%);
+    border-radius: 20px;
+    transition: all 2s ease-in-out;
+}
+
+/* ESERCIZIO 9 */
+
+.ex-9-img:hover {
+    filter: brightness(70%) grayscale(60%);
+    border-radius: 20px;
+    transition: all 2s ease-in-out;
+    width: 600px;
+    margin: 0;
+}
+
+/* ESERCIZIO 10 */
+
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ESERCIZIO 11 */
+
+.ex-11-icon:hover {
+    animation: 2s linear fakespin;
+}
+
+
+@keyframes fakespin{
+    0% {
+        transform: rotate(0deg);
+    }
+    95% {
+        transform: rotate(320deg);
+    }
+}
+
+/* ESERCIZIO 12 */
+
+.ex-12-button:hover .ex-12-bottom-white {
+
+    animation: 2s linear biancobottom;
+}
+
+.ex-12-button:hover .ex-12-top-white{
+    animation: 2s linear biancotop;
+}
+
+@keyframes biancotop {
+    50% {
+        position: absolute;
+        top: -10px;
+        left: calc(90% - 60px);
+    }
+}
+
+@keyframes biancobottom {
+    50% {
+        position: absolute;
+        bottom: -10px;
+        right: calc(100% - 60px);
+    }
+}
+
+/* ESERCIZIO 13 */
+
+.ex-13-button:hover .ex-13-top-white{
+    animation: fulltop 4s linear;
+}
+
+.ex-13-button:hover .ex-13-bottom-white {
+    animation: fulldown 4s linear;
+}
+
+@keyframes fulltop {
+    20% {
+        position: absolute;
+        top: -10px;
+        left: 100%;
+    }  
+    40% {
+        position: absolute;
+        top: calc(100% - 10px);
+        left: 100%;
+    }
+    60% {
+        position: absolute;
+        top: calc(100% - 10px);
+        left: calc(0% - 60px);
+    }
+    80% {
+        position: absolute;
+        top: -10px;
+        left: calc(0% - 60px)
+    }
+}
+
+@keyframes fulldown {
+    20%{
+        position: absolute;
+        bottom: -10px;
+        right: 100%;
+    }
+    40%{
+        position: absolute;
+        bottom: calc(100% - 10px);
+        right: 100%;
+    }
+    60%{
+        position: absolute;
+        bottom: calc(100% - 10px);
+        right: calc(0% - 60px);
+    }
+    80%{
+        position: absolute;
+        bottom: -10px;
+        right: calc(0% - 60px);
+    }
+}
